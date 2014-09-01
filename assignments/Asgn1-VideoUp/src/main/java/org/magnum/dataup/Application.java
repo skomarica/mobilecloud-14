@@ -30,10 +30,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 // This annotation tells Spring to look for controllers, etc.
 // starting in the current package
-@ComponentScan
-//This annotation tells Spring that this class contains configuration
-//information
-//for the application.
+@ComponentScan(basePackages = "com.")
+// This annotation tells Spring that this class contains configuration
+// information
+// for the application.
 @Configuration
 public class Application {
 
@@ -50,7 +50,7 @@ public class Application {
 	// This configuration element adds the ability to accept multipart
 	// requests to the web container.
 	@Bean
-    public MultipartConfigElement multipartConfigElement() {
+	public MultipartConfigElement multipartConfigElement() {
 		// Setup the application container to be accept multipart requests
 		final MultiPartConfigFactory factory = new MultiPartConfigFactory();
 		// Place upper bounds on the size of the requests to ensure that
